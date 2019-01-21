@@ -1,0 +1,40 @@
+{
+    "name": "anal/portfolio-anal",
+    "type": "typo3-cms-extension",
+    "description": "Portfolio",
+    "authors": [
+        {
+            "name": "Aur\u00e9lien SATGER",
+            "role": "Developer"
+        },
+        {
+            "name": "Nicolas TROCHUT",
+            "role": "Developer"
+        },
+        {
+            "name": "Adrien CASSAR",
+            "role": "Developer"
+        },
+        {
+            "name": "Lucas CAUSSAT",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ANAL\\PortfolioAnal\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ANAL\\PortfolioAnal\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "portfolio_anal": "self.version",
+        "typo3-ter/portfolio-anal": "self.version"
+    }
+}

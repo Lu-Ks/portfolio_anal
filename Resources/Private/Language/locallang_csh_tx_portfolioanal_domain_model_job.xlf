@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-01-21T14:21:07Z" product-name="portfolio_anal">
+		<header/>
+		<body>
+			<trans-unit id="job_name.description">
+				<source>poste</source>
+			</trans-unit>
+			<trans-unit id="company_name.description">
+				<source>Nom de la compagnie</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description du poste</source>
+			</trans-unit>
+			<trans-unit id="date_start.description">
+				<source>Date d&#039;embauche</source>
+			</trans-unit>
+			<trans-unit id="date_end.description">
+				<source>dateEnd</source>
+			</trans-unit>
+			<trans-unit id="context.description">
+				<source>Type de contrat</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>Lieu</source>
+			</trans-unit>
+			<trans-unit id="skills.description">
+				<source>skills</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

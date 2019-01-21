@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-01-21T14:21:07Z" product-name="portfolio_anal">
+		<header/>
+		<body>
+			<trans-unit id="domain.description">
+				<source>Domaine</source>
+			</trans-unit>
+			<trans-unit id="date_start.description">
+				<source>Date de début</source>
+			</trans-unit>
+			<trans-unit id="date_end.description">
+				<source>Date de fin</source>
+			</trans-unit>
+			<trans-unit id="degree.description">
+				<source>Diplôme</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>Place</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>Intitulé</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>Description</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
