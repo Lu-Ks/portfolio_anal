@@ -21,6 +21,10 @@ call_user_func(
             'CVteque'
         );
 
+        $pluginSignature = str_replace('_', '', 'portfolio_anal') . '_profile';
+        $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:portfolio_anal/Configuration/FlexForms/flexform_profile.xml');
+
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'ANAL.PortfolioAnal',
             'Project',

@@ -809,7 +809,7 @@
                 "actions": {
                     "controllerActionCombinations": "Profile=>list,show",
                     "noncacheableActions": "",
-                    "switchableActions": ""
+                    "switchableActions": "CVteque\nProfile->list;Profile->show"
                 },
                 "description": "",
                 "key": "profile",
@@ -915,7 +915,7 @@
         }
     ],
     "log": {
-        "last_modified": "2019-01-21 02:21",
+        "last_modified": "2019-01-21 04:15",
         "extension_builder_version": "8.10.2",
         "be_user": " (1)"
     }
