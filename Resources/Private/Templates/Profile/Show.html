@@ -17,13 +17,64 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:flashMessages />
 
 	<div class="row">
-		<div>
-			<h4>Date de naissance : <b class="badge badge-success rounded">{profile.Birthdate -> f:format.date()}</b></h4>
+		<div class="col-md-6 border-right col-12">
+			<div class="m-3">
+
+				<f:if condition="{profile.Birthdate}">
+					<f:then>
+						<h5>Date de naissance : <b class="badge badge-success rounded">{profile.Birthdate -> f:format.date()}</b></h5>
+					</f:then>
+					<f:else>
+						<h5>Date de naissance : <b class="badge badge-danger rounded">{profile.Birthdate -> f:format.date()}</b></h5>
+					</f:else>
+				</f:if>
+
+				<f:if condition="{profile.DrivingLicense}">
+					<h5>Dispose du permis : <i class="glyphicon glyphicon-ok"></i> </h5>
+				</f:if>
+
+				<f:if condition="{profile.phone}">
+					<f:then>
+						<h5>Numéro de téléphone : <b class="badge badge-success rounded">{profile.phone}</b></h5>
+					</f:then>
+					<f:else>
+						<h5>Numéro de téléphone : <b class="badge badge-danger rounded">{profile.phone}Non renseigné</b></h5>
+					</f:else>
+				</f:if>
+
+				<f:if condition="{profile.email}">
+					<f:then>
+						<h5>Email : <b class="badge badge-success rounded">{profile.email}</b></h5>
+					</f:then>
+					<f:else>
+						<h5>Email : <b class="badge badge-danger rounded">{profile.email}Non renseigné</b></h5>
+					</f:else>
+				</f:if>
+
+				<f:if condition="{profile.address}">
+					<f:then>
+						<h5>Adresse : <b class="badge badge-success rounded">{profile.address}</b></h5>
+					</f:then>
+					<f:else>
+						<h5>Adresse : <b class="badge badge-danger rounded">{profile.address}Non renseigné</b></h5>
+					</f:else>
+				</f:if>
+			</div>
 		</div>
-		<div>
-			<f:if condition="{profile.DrivingLicense}">
-				<h4>Dispose du permis : <i class="glyphicon glyphicon-ok"></i> </h4>
-			</f:if>
+
+		<div class="col-md-6 col-12">
+			<div class="m-3">
+				<h2 class="text-primary">Projets</h2>
+				<f:for each="{profile.projects}" as="project">
+					<div class="border-top m-1 p-2">
+						<h5>{project.title}</h5>
+						<h5>Du <b class="text-info">{project.DateStart -> f:format.date()} </b> au <b class="text-info">{project.DateEnd
+								-> f:format.date()}</b></h5>
+						<f:format.html> <i> {project.description} </i> </f:format.html>
+					</div>
+				</f:for>
+			</div>
+
 		</div>
 	</div>
 

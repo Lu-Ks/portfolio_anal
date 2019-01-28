@@ -15,32 +15,34 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="content">
 	<h1>Liste des profils</h1>
 	<f:flashMessages />
-	<div class="row">
+	<f:widget.paginate objects="{profiles}" as="paginatedProfiles" configuration="{itemsPerPage: 6, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}">
 
-		<f:for each="{profiles}" as="profile">
+		<div class="row">
+			<f:for each="{paginatedProfiles}" as="profile">
 
-			<div class="col-md-4 col-sm-6">
-				<f:link.action action="show" arguments="{profile : profile}">
-					<div class="card m-3 p-3 bg-light">
-						<h2 class="text-center text-primary">
-							{profile.lastName} {profile.firstname}
-						</h2>
-						<f:if condition="{profile.photo}">
-							<f:image treatIdAsReference="1" image="{profile.photo}" width="100c" maxHeight="100" />
-						</f:if>
-						<div class="row">
-							<div class="col-12 col-lg-6 text-center">
-								<span class="badge badge-info rounded"> {profile.phone}</span>
-							</div>
-							<div class="col-12 col-lg-6 text-center">
-								<span class="badge badge-secondary rounded"> {profile.email}</span>
+				<div class="col-md-4 col-sm-6">
+					<f:link.action action="show" arguments="{profile : profile}">
+						<div class="card m-3 p-3 bg-light">
+							<h2 class="text-center text-primary">
+								{profile.lastName} {profile.firstname}
+							</h2>
+							<f:if condition="{profile.photo}">
+								<f:image treatIdAsReference="1" image="{profile.photo}" width="100c" maxHeight="100" />
+							</f:if>
+							<div class="row">
+								<div class="col-12 col-lg-6 text-center">
+									<span class="badge badge-info rounded"> {profile.phone}</span>
+								</div>
+								<div class="col-12 col-lg-6 text-center">
+									<span class="badge badge-secondary rounded"> {profile.email}</span>
+								</div>
 							</div>
 						</div>
-					</div>
-				</f:link.action>
-			</div>
-		</f:for>
-	</div>
+					</f:link.action>
+				</div>
+			</f:for>
+		</div>
+	</f:widget.paginate>
 </f:section>
 
 </html>
