@@ -1,4 +1,7 @@
 <?php
+
+use ANAL\PortfolioAnal\Domain\Model\Training;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:portfolio_anal/Resources/Private/Language/locallang_db.xlf:tx_portfolioanal_domain_model_training',
@@ -145,7 +148,8 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['-- Label --', 0],
+                    ['', 0],
+                    ['DUT', Training::DEGREE_DUT],
                 ],
                 'size' => 1,
                 'maxitems' => 1,

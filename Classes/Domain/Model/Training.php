@@ -20,6 +20,8 @@ namespace ANAL\PortfolioAnal\Domain\Model;
  */
 class Training extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+    const DEGREE_DUT = 1;
+
     /**
      * Domaine
      *

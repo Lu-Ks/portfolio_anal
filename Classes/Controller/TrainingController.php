@@ -1,6 +1,8 @@
 <?php
 namespace ANAL\PortfolioAnal\Controller;
 
+use ANAL\PortfolioAnal\Domain\UseCase\Query\TrainingSearch;
+
 /***
  *
  * This file is part of the "PortfolioANAL" Extension for TYPO3 CMS.
@@ -51,9 +53,7 @@ class TrainingController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     }
 
     /**
-     * action search
-     *
-     * @return void
+     * @param \ANAL\PortfolioAnal\Domain\UseCase\Query\TrainingSearch $search
      */
     public function searchAction()
     {
