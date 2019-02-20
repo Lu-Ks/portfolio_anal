@@ -1,48 +1,47 @@
-<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:layout name="Default" />
-
-	This Template is responsible for creating a table of domain objects.
-
-	If you modify this template, do not forget to change the overwrite settings
-	in /Configuration/ExtensionBuilder/settings.yaml:
-	  Resources:
-		Private:
-		  Templates:
-			List.html: keep
-
-	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
-	<f:section name="content">
-		<h1>Listing for Project</h1>
-
-		<f:flashMessages />
-
-		<table  class="tx_portfolioanal" >
-			<tr>
-				<th><f:translate key="tx_portfolioanal_domain_model_project.title" /></th>
-				<th><f:translate key="tx_portfolioanal_domain_model_project.description" /></th>
-				<th><f:translate key="tx_portfolioanal_domain_model_project.photo" /></th>
-				<th><f:translate key="tx_portfolioanal_domain_model_project.url" /></th>
-				<th><f:translate key="tx_portfolioanal_domain_model_project.date_start" /></th>
-				<th><f:translate key="tx_portfolioanal_domain_model_project.date_end" /></th>
-				<th> </th>
-				<th> </th>
-			</tr>
-
-			<f:for each="{projects}" as="project">
-				<tr>
-					<td><f:link.action action="show" arguments="{project : project}"> {project.title}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{project : project}"> {project.description}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{project : project}"> {project.photo.originalResource.name}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{project : project}"> {project.url}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{project : project}"> {project.dateStart -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{project : project}"> {project.dateEnd -> f:format.date()}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{project : project}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{project : project}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Project</f:link.action>
-	</f:section>
+<html data-namespace-typo3-fluid="true" xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <f:layout name="Default"/>
+    This Template is responsible for creating a table of domain objects.
+    
+    	If you modify this template, do not forget to change the overwrite settings
+    	in /Configuration/ExtensionBuilder/settings.yaml:
+    	  Resources:
+    		Private:
+    		  Templates:
+    			List.html: keep
+    
+    	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+    <f:section name="content">
+        <h1>Liste des projets</h1>
+        <f:flashMessages/>
+        <f:widget.paginate as="paginatedProjects" configuration="{itemsPerPage: 6, insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: 10}" objects="{projects}">
+            <div class="row">
+                <f:for as="project" each="{paginatedProjects}">
+                    <div class="col-md-4 col-sm-6">
+                        <f:link.action action="show" arguments="{project : project}">
+                            <div class="card m-3 p-3 bg-light">
+                                <h2 class="text-center text-primary">
+                                    {project.title}
+                                </h2>
+                                <f:if condition="{project.photo}">
+                                    <f:image image="{project.photo}" maxHeight="100" treatIdAsReference="1" width="100c"/>
+                                </f:if>
+                                <div class="row">
+                                    <div class="col-12 col-lg-6 text-center">
+                                        <span>Date de début</span>
+                                        <span class="badge badge-info rounded">
+                                            {project.dateStart -> f:format.date()}</span>
+                                    </div>
+                                    <div class="col-12 col-lg-6 text-center">
+                                        <span>Date de fin</span>
+                                        <span class="badge badge-secondary rounded">
+                                            {project.dateEnd -> f:format.date()}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </f:link.action>
+                    </div>
+                </f:for>
+            </div>
+        </f:widget.paginate>
+    </f:section>
 </html>
